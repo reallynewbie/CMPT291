@@ -24,7 +24,6 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.ManageMovieTab = New System.Windows.Forms.TabPage()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.DeleteMovie = New System.Windows.Forms.Button()
         Me.EditMovie = New System.Windows.Forms.Button()
         Me.AddMovie = New System.Windows.Forms.Button()
@@ -32,10 +31,11 @@ Partial Class Form1
         Me.ManageSalesTab = New System.Windows.Forms.TabPage()
         Me.ManageListsTab = New System.Windows.Forms.TabPage()
         Me._291ProjectDataSet1 = New _291_Project._291ProjectDataSet()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.TabControl1.SuspendLayout()
         Me.ManageMovieTab.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me._291ProjectDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -63,14 +63,6 @@ Partial Class Form1
         Me.ManageMovieTab.TabIndex = 0
         Me.ManageMovieTab.Text = "Movies"
         Me.ManageMovieTab.UseVisualStyleBackColor = True
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(438, 76)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(240, 150)
-        Me.DataGridView1.TabIndex = 3
         '
         'DeleteMovie
         '
@@ -133,6 +125,14 @@ Partial Class Form1
         Me._291ProjectDataSet1.DataSetName = "_291ProjectDataSet"
         Me._291ProjectDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(54, 57)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(626, 340)
+        Me.DataGridView1.TabIndex = 3
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -143,8 +143,8 @@ Partial Class Form1
         Me.Text = "Management"
         Me.TabControl1.ResumeLayout(False)
         Me.ManageMovieTab.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me._291ProjectDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
