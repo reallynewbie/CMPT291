@@ -6,6 +6,7 @@ Public Class Form1
     Private myCmd As SqlCommand
     Private myReader As SqlDataReader
     Private results As String
+    Private test As String
     Private dt = New DataTable()
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DataGridView1.AllowUserToAddRows = False
@@ -13,7 +14,7 @@ Public Class Form1
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
 
 
-
+        
 
         RefreshData()
 
