@@ -77,4 +77,10 @@ Public Class Form1
         myReader.Close()
         myConn.Close()
     End Sub
+
+    Private Sub BtnTest_Click(sender As Object, e As EventArgs) Handles BtnTest.Click
+        Dim testing = New User
+        testing.Show()
+        ' testing.id
+    End Sub
 End Class

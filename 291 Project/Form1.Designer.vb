@@ -24,6 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.ManageMovieTab = New System.Windows.Forms.TabPage()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.DeleteMovie = New System.Windows.Forms.Button()
         Me.EditMovie = New System.Windows.Forms.Button()
         Me.AddMovie = New System.Windows.Forms.Button()
@@ -31,11 +32,13 @@ Partial Class Form1
         Me.ManageSalesTab = New System.Windows.Forms.TabPage()
         Me.ManageListsTab = New System.Windows.Forms.TabPage()
         Me._291ProjectDataSet1 = New _291_Project._291ProjectDataSet()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me._291ProjectDataSet2 = New _291_Project._291ProjectDataSet()
+        Me.BtnTest = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.ManageMovieTab.SuspendLayout()
-        CType(Me._291ProjectDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me._291ProjectDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me._291ProjectDataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -63,6 +66,14 @@ Partial Class Form1
         Me.ManageMovieTab.TabIndex = 0
         Me.ManageMovieTab.Text = "Movies"
         Me.ManageMovieTab.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(54, 57)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(626, 340)
+        Me.DataGridView1.TabIndex = 3
         '
         'DeleteMovie
         '
@@ -125,26 +136,34 @@ Partial Class Form1
         Me._291ProjectDataSet1.DataSetName = "_291ProjectDataSet"
         Me._291ProjectDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'DataGridView1
+        '_291ProjectDataSet2
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(54, 57)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(626, 340)
-        Me.DataGridView1.TabIndex = 3
+        Me._291ProjectDataSet2.DataSetName = "_291ProjectDataSet"
+        Me._291ProjectDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BtnTest
+        '
+        Me.BtnTest.Location = New System.Drawing.Point(658, 12)
+        Me.BtnTest.Name = "BtnTest"
+        Me.BtnTest.Size = New System.Drawing.Size(75, 23)
+        Me.BtnTest.TabIndex = 4
+        Me.BtnTest.Text = "OpenUserPage(Test)"
+        Me.BtnTest.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(745, 506)
+        Me.Controls.Add(Me.BtnTest)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "Form1"
         Me.Text = "Management"
         Me.TabControl1.ResumeLayout(False)
         Me.ManageMovieTab.ResumeLayout(False)
-        CType(Me._291ProjectDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me._291ProjectDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me._291ProjectDataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -159,4 +178,6 @@ Partial Class Form1
     Friend WithEvents ManageListsTab As TabPage
     Friend WithEvents _291ProjectDataSet1 As _291ProjectDataSet
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents _291ProjectDataSet2 As _291ProjectDataSet
+    Friend WithEvents BtnTest As Button
 End Class
