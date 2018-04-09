@@ -72,6 +72,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddActorForm.Designer.vb">
+      <DependentUpon>AddActorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddActorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEmployeeForm.Designer.vb">
+      <DependentUpon>AddEmployeeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddEmployeeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +95,12 @@
       <DependentUpon>AddMovieForm.vb</DependentUpon>
     </Compile>
     <Compile Include="AddMovieForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.vb">
+      <DependentUpon>ActorGenreForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ActorGenreForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -116,11 +134,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddActorForm.resx">
+      <DependentUpon>AddActorForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEmployeeForm.resx">
+      <DependentUpon>AddEmployeeForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddMovieForm.resx">
       <DependentUpon>AddMovieForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>ActorGenreForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
