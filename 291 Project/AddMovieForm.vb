@@ -1,5 +1,4 @@
 ﻿Imports System.Data.SqlClient
-Imports System.Data
 
 Public Class AddMovieForm
     Private myConn As SqlConnection
@@ -41,23 +40,44 @@ Public Class AddMovieForm
         fee = AddFeeBox.Text
         copies = AddCopiesBox.Text
         rating = "0.0"
-        myCmd.CommandText = "INSERT INTO Movie Values(" + id.ToString + ",'" + title + "'," + fee + "," + copies + ",0.0)"
-        myConn.Open()
-        myCmd.ExecuteNonQuery()
-        myConn.Close()
-        Form1.RefreshData()
+        If IsNumeric(AddFeeBox.Text) And IsNumeric(AddCopiesBox.Text) Then
+            myCmd.CommandText = "INSERT INTO Movie Values(" + id.ToString + ",'" + title + "'," + fee + "," + copies + ",0.0)"
+            myConn.Open()
+            myCmd.ExecuteNonQuery()
+            myConn.Close()
+            Form1.RefreshMovieData()
+            Me.Close()
+        Else
+            SubmissionErrorMessage.Visible = True
 
-        Me.Close()
+        End If
+
+
 
     End Sub
 
     Private Sub CancelMovieButton_Click(sender As Object, e As EventArgs) Handles CancelMovieButton.Click
         Dim DeleteChoice As DialogResult
-        DeleteChoice = MsgBox("Are you sure you want to delete this movie(s)?", MessageBoxButtons.OKCancel)
+        DeleteChoice = MsgBox("Are you sure you want to Cancel?", MessageBoxButtons.OKCancel)
         If DeleteChoice = DialogResult.OK Then
             Me.Close()
 
         End If
 
+    End Sub
+
+    Private Sub ButActors_Click(sender As Object, e As EventArgs) Handles ButActors.Click
+        Dim actbox = New ActorGenreForm
+        actbox.actor = True
+        actbox.mid = id
+        actbox.Show()
+
+    End Sub
+
+    Private Sub ButGenres_Click(sender As Object, e As EventArgs) Handles ButGenres.Click
+        Dim genbox = New ActorGenreForm
+        genbox.actor = False
+        genbox.mid = id
+        genbox.Show()
     End Sub
 End Class
