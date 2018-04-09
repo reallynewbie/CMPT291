@@ -22,56 +22,56 @@ Partial Class MainMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.BtnUser = New System.Windows.Forms.Button()
+        Me.BtnCusRep = New System.Windows.Forms.Button()
+        Me.BtnAdmin = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Button1
+        'BtnUser
         '
-        Me.Button1.Font = New System.Drawing.Font("Meiryo UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(31, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(200, 150)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "User"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnUser.Font = New System.Drawing.Font("Meiryo UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnUser.Location = New System.Drawing.Point(31, 12)
+        Me.BtnUser.Name = "BtnUser"
+        Me.BtnUser.Size = New System.Drawing.Size(200, 150)
+        Me.BtnUser.TabIndex = 0
+        Me.BtnUser.Text = "User"
+        Me.BtnUser.UseVisualStyleBackColor = True
         '
-        'Button2
+        'BtnCusRep
         '
-        Me.Button2.Font = New System.Drawing.Font("Meiryo UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(235, 12)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(200, 150)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Customer Representative"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BtnCusRep.Font = New System.Drawing.Font("Meiryo UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCusRep.Location = New System.Drawing.Point(235, 12)
+        Me.BtnCusRep.Name = "BtnCusRep"
+        Me.BtnCusRep.Size = New System.Drawing.Size(200, 150)
+        Me.BtnCusRep.TabIndex = 1
+        Me.BtnCusRep.Text = "Customer Representative"
+        Me.BtnCusRep.UseVisualStyleBackColor = True
         '
-        'Button3
+        'BtnAdmin
         '
-        Me.Button3.Font = New System.Drawing.Font("Meiryo UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(31, 176)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(404, 115)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Admin"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.BtnAdmin.Font = New System.Drawing.Font("Meiryo UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAdmin.Location = New System.Drawing.Point(31, 176)
+        Me.BtnAdmin.Name = "BtnAdmin"
+        Me.BtnAdmin.Size = New System.Drawing.Size(404, 115)
+        Me.BtnAdmin.TabIndex = 2
+        Me.BtnAdmin.Text = "Admin"
+        Me.BtnAdmin.UseVisualStyleBackColor = True
         '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(480, 303)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.BtnAdmin)
+        Me.Controls.Add(Me.BtnCusRep)
+        Me.Controls.Add(Me.BtnUser)
         Me.Name = "MainMenu"
         Me.Text = "MainMenu"
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents BtnUser As Button
+    Friend WithEvents BtnCusRep As Button
+    Friend WithEvents BtnAdmin As Button
 End Class

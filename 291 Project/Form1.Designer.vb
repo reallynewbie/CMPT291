@@ -28,6 +28,11 @@ Partial Class Form1
         Me.DeleteMovie = New System.Windows.Forms.Button()
         Me.EditMovie = New System.Windows.Forms.Button()
         Me.AddMovie = New System.Windows.Forms.Button()
+        Me.ManageActorsTab = New System.Windows.Forms.TabPage()
+        Me.ActorGridView = New System.Windows.Forms.DataGridView()
+        Me.EditActorBut = New System.Windows.Forms.Button()
+        Me.RemoveActorButton = New System.Windows.Forms.Button()
+        Me.AddActorBut = New System.Windows.Forms.Button()
         Me.ManageEmployeesTab = New System.Windows.Forms.TabPage()
         Me.EmployeeGridView = New System.Windows.Forms.DataGridView()
         Me.EditEmployee = New System.Windows.Forms.Button()
@@ -58,15 +63,11 @@ Partial Class Form1
         Me.LabMostActor = New System.Windows.Forms.Label()
         Me._291ProjectDataSet1 = New _291_Project._291ProjectDataSet()
         Me._291ProjectDataSet2 = New _291_Project._291ProjectDataSet()
-        Me.BtnTest = New System.Windows.Forms.Button()
-        Me.ManageActorsTab = New System.Windows.Forms.TabPage()
-        Me.AddActorBut = New System.Windows.Forms.Button()
-        Me.RemoveActorButton = New System.Windows.Forms.Button()
-        Me.EditActorBut = New System.Windows.Forms.Button()
-        Me.ActorGridView = New System.Windows.Forms.DataGridView()
         Me.TabControl1.SuspendLayout()
         Me.ManageMovieTab.SuspendLayout()
         CType(Me.MovieGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ManageActorsTab.SuspendLayout()
+        CType(Me.ActorGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ManageEmployeesTab.SuspendLayout()
         CType(Me.EmployeeGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ManageSalesTab.SuspendLayout()
@@ -80,8 +81,6 @@ Partial Class Form1
         Me.ListsAssorted.SuspendLayout()
         CType(Me._291ProjectDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me._291ProjectDataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ManageActorsTab.SuspendLayout()
-        CType(Me.ActorGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -91,11 +90,10 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.ManageEmployeesTab)
         Me.TabControl1.Controls.Add(Me.ManageSalesTab)
         Me.TabControl1.Controls.Add(Me.ManageListsTab)
-        Me.TabControl1.Location = New System.Drawing.Point(1, 37)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabControl1.Location = New System.Drawing.Point(1, 30)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(992, 588)
+        Me.TabControl1.Size = New System.Drawing.Size(744, 478)
         Me.TabControl1.TabIndex = 0
         '
         'ManageMovieTab
@@ -104,11 +102,10 @@ Partial Class Form1
         Me.ManageMovieTab.Controls.Add(Me.DeleteMovie)
         Me.ManageMovieTab.Controls.Add(Me.EditMovie)
         Me.ManageMovieTab.Controls.Add(Me.AddMovie)
-        Me.ManageMovieTab.Location = New System.Drawing.Point(4, 25)
-        Me.ManageMovieTab.Margin = New System.Windows.Forms.Padding(4)
+        Me.ManageMovieTab.Location = New System.Drawing.Point(4, 22)
         Me.ManageMovieTab.Name = "ManageMovieTab"
-        Me.ManageMovieTab.Padding = New System.Windows.Forms.Padding(4)
-        Me.ManageMovieTab.Size = New System.Drawing.Size(984, 559)
+        Me.ManageMovieTab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.ManageMovieTab.Size = New System.Drawing.Size(736, 452)
         Me.ManageMovieTab.TabIndex = 0
         Me.ManageMovieTab.Text = "Movies"
         Me.ManageMovieTab.UseVisualStyleBackColor = True
@@ -118,42 +115,95 @@ Partial Class Form1
         Me.MovieGridView.AllowUserToAddRows = False
         Me.MovieGridView.AllowUserToDeleteRows = False
         Me.MovieGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MovieGridView.Location = New System.Drawing.Point(32, 70)
-        Me.MovieGridView.Margin = New System.Windows.Forms.Padding(4)
+        Me.MovieGridView.Location = New System.Drawing.Point(24, 57)
         Me.MovieGridView.Name = "MovieGridView"
         Me.MovieGridView.ReadOnly = True
-        Me.MovieGridView.Size = New System.Drawing.Size(919, 418)
+        Me.MovieGridView.Size = New System.Drawing.Size(689, 340)
         Me.MovieGridView.TabIndex = 3
         '
         'DeleteMovie
         '
-        Me.DeleteMovie.Location = New System.Drawing.Point(844, 516)
-        Me.DeleteMovie.Margin = New System.Windows.Forms.Padding(4)
+        Me.DeleteMovie.Location = New System.Drawing.Point(633, 419)
         Me.DeleteMovie.Name = "DeleteMovie"
-        Me.DeleteMovie.Size = New System.Drawing.Size(107, 28)
+        Me.DeleteMovie.Size = New System.Drawing.Size(80, 23)
         Me.DeleteMovie.TabIndex = 2
         Me.DeleteMovie.Text = "Delete Movie"
         Me.DeleteMovie.UseVisualStyleBackColor = True
         '
         'EditMovie
         '
-        Me.EditMovie.Location = New System.Drawing.Point(736, 516)
-        Me.EditMovie.Margin = New System.Windows.Forms.Padding(4)
+        Me.EditMovie.Location = New System.Drawing.Point(552, 419)
         Me.EditMovie.Name = "EditMovie"
-        Me.EditMovie.Size = New System.Drawing.Size(100, 28)
+        Me.EditMovie.Size = New System.Drawing.Size(75, 23)
         Me.EditMovie.TabIndex = 1
         Me.EditMovie.Text = "Edit Movie"
         Me.EditMovie.UseVisualStyleBackColor = True
         '
         'AddMovie
         '
-        Me.AddMovie.Location = New System.Drawing.Point(32, 18)
-        Me.AddMovie.Margin = New System.Windows.Forms.Padding(4)
+        Me.AddMovie.Location = New System.Drawing.Point(24, 15)
         Me.AddMovie.Name = "AddMovie"
-        Me.AddMovie.Size = New System.Drawing.Size(100, 28)
+        Me.AddMovie.Size = New System.Drawing.Size(75, 23)
         Me.AddMovie.TabIndex = 0
         Me.AddMovie.Text = "Add Movie"
         Me.AddMovie.UseVisualStyleBackColor = True
+        '
+        'ManageActorsTab
+        '
+        Me.ManageActorsTab.Controls.Add(Me.ActorGridView)
+        Me.ManageActorsTab.Controls.Add(Me.EditActorBut)
+        Me.ManageActorsTab.Controls.Add(Me.RemoveActorButton)
+        Me.ManageActorsTab.Controls.Add(Me.AddActorBut)
+        Me.ManageActorsTab.Location = New System.Drawing.Point(4, 22)
+        Me.ManageActorsTab.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ManageActorsTab.Name = "ManageActorsTab"
+        Me.ManageActorsTab.Size = New System.Drawing.Size(736, 452)
+        Me.ManageActorsTab.TabIndex = 4
+        Me.ManageActorsTab.Text = "Actors"
+        Me.ManageActorsTab.UseVisualStyleBackColor = True
+        '
+        'ActorGridView
+        '
+        Me.ActorGridView.AllowUserToAddRows = False
+        Me.ActorGridView.AllowUserToDeleteRows = False
+        Me.ActorGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ActorGridView.Location = New System.Drawing.Point(15, 52)
+        Me.ActorGridView.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ActorGridView.Name = "ActorGridView"
+        Me.ActorGridView.ReadOnly = True
+        Me.ActorGridView.RowTemplate.Height = 24
+        Me.ActorGridView.Size = New System.Drawing.Size(709, 353)
+        Me.ActorGridView.TabIndex = 3
+        '
+        'EditActorBut
+        '
+        Me.EditActorBut.Location = New System.Drawing.Point(557, 424)
+        Me.EditActorBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.EditActorBut.Name = "EditActorBut"
+        Me.EditActorBut.Size = New System.Drawing.Size(82, 22)
+        Me.EditActorBut.TabIndex = 2
+        Me.EditActorBut.Text = "Edit Actor"
+        Me.EditActorBut.UseVisualStyleBackColor = True
+        '
+        'RemoveActorButton
+        '
+        Me.RemoveActorButton.Location = New System.Drawing.Point(644, 424)
+        Me.RemoveActorButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RemoveActorButton.Name = "RemoveActorButton"
+        Me.RemoveActorButton.Size = New System.Drawing.Size(80, 22)
+        Me.RemoveActorButton.TabIndex = 1
+        Me.RemoveActorButton.Text = "Delete Actor"
+        Me.RemoveActorButton.UseVisualStyleBackColor = True
+        '
+        'AddActorBut
+        '
+        Me.AddActorBut.Location = New System.Drawing.Point(15, 13)
+        Me.AddActorBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.AddActorBut.Name = "AddActorBut"
+        Me.AddActorBut.Size = New System.Drawing.Size(76, 22)
+        Me.AddActorBut.TabIndex = 0
+        Me.AddActorBut.Text = "Add Actor"
+        Me.AddActorBut.UseVisualStyleBackColor = True
         '
         'ManageEmployeesTab
         '
@@ -161,11 +211,10 @@ Partial Class Form1
         Me.ManageEmployeesTab.Controls.Add(Me.EditEmployee)
         Me.ManageEmployeesTab.Controls.Add(Me.DeleteEmployee)
         Me.ManageEmployeesTab.Controls.Add(Me.AddEmployee)
-        Me.ManageEmployeesTab.Location = New System.Drawing.Point(4, 25)
-        Me.ManageEmployeesTab.Margin = New System.Windows.Forms.Padding(4)
+        Me.ManageEmployeesTab.Location = New System.Drawing.Point(4, 22)
         Me.ManageEmployeesTab.Name = "ManageEmployeesTab"
-        Me.ManageEmployeesTab.Padding = New System.Windows.Forms.Padding(4)
-        Me.ManageEmployeesTab.Size = New System.Drawing.Size(984, 559)
+        Me.ManageEmployeesTab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.ManageEmployeesTab.Size = New System.Drawing.Size(736, 452)
         Me.ManageEmployeesTab.TabIndex = 1
         Me.ManageEmployeesTab.Text = "Employees"
         Me.ManageEmployeesTab.UseVisualStyleBackColor = True
@@ -175,36 +224,40 @@ Partial Class Form1
         Me.EmployeeGridView.AllowUserToAddRows = False
         Me.EmployeeGridView.AllowUserToDeleteRows = False
         Me.EmployeeGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.EmployeeGridView.Location = New System.Drawing.Point(21, 67)
+        Me.EmployeeGridView.Location = New System.Drawing.Point(16, 54)
+        Me.EmployeeGridView.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.EmployeeGridView.Name = "EmployeeGridView"
         Me.EmployeeGridView.ReadOnly = True
         Me.EmployeeGridView.RowTemplate.Height = 24
-        Me.EmployeeGridView.Size = New System.Drawing.Size(951, 429)
+        Me.EmployeeGridView.Size = New System.Drawing.Size(713, 349)
         Me.EmployeeGridView.TabIndex = 3
         '
         'EditEmployee
         '
-        Me.EditEmployee.Location = New System.Drawing.Point(710, 518)
+        Me.EditEmployee.Location = New System.Drawing.Point(532, 421)
+        Me.EditEmployee.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.EditEmployee.Name = "EditEmployee"
-        Me.EditEmployee.Size = New System.Drawing.Size(120, 30)
+        Me.EditEmployee.Size = New System.Drawing.Size(90, 24)
         Me.EditEmployee.TabIndex = 2
         Me.EditEmployee.Text = "Edit Employee"
         Me.EditEmployee.UseVisualStyleBackColor = True
         '
         'DeleteEmployee
         '
-        Me.DeleteEmployee.Location = New System.Drawing.Point(836, 518)
+        Me.DeleteEmployee.Location = New System.Drawing.Point(627, 421)
+        Me.DeleteEmployee.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DeleteEmployee.Name = "DeleteEmployee"
-        Me.DeleteEmployee.Size = New System.Drawing.Size(136, 31)
+        Me.DeleteEmployee.Size = New System.Drawing.Size(102, 25)
         Me.DeleteEmployee.TabIndex = 1
         Me.DeleteEmployee.Text = "Delete Employee"
         Me.DeleteEmployee.UseVisualStyleBackColor = True
         '
         'AddEmployee
         '
-        Me.AddEmployee.Location = New System.Drawing.Point(21, 23)
+        Me.AddEmployee.Location = New System.Drawing.Point(16, 19)
+        Me.AddEmployee.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.AddEmployee.Name = "AddEmployee"
-        Me.AddEmployee.Size = New System.Drawing.Size(128, 28)
+        Me.AddEmployee.Size = New System.Drawing.Size(96, 23)
         Me.AddEmployee.TabIndex = 0
         Me.AddEmployee.Text = "Add Employee"
         Me.AddEmployee.UseVisualStyleBackColor = True
@@ -212,11 +265,10 @@ Partial Class Form1
         'ManageSalesTab
         '
         Me.ManageSalesTab.Controls.Add(Me.OrderGridView)
-        Me.ManageSalesTab.Location = New System.Drawing.Point(4, 25)
-        Me.ManageSalesTab.Margin = New System.Windows.Forms.Padding(4)
+        Me.ManageSalesTab.Location = New System.Drawing.Point(4, 22)
         Me.ManageSalesTab.Name = "ManageSalesTab"
-        Me.ManageSalesTab.Padding = New System.Windows.Forms.Padding(4)
-        Me.ManageSalesTab.Size = New System.Drawing.Size(984, 559)
+        Me.ManageSalesTab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.ManageSalesTab.Size = New System.Drawing.Size(736, 452)
         Me.ManageSalesTab.TabIndex = 2
         Me.ManageSalesTab.Text = "Orders"
         Me.ManageSalesTab.UseVisualStyleBackColor = True
@@ -226,20 +278,20 @@ Partial Class Form1
         Me.OrderGridView.AllowUserToAddRows = False
         Me.OrderGridView.AllowUserToDeleteRows = False
         Me.OrderGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.OrderGridView.Location = New System.Drawing.Point(7, 7)
+        Me.OrderGridView.Location = New System.Drawing.Point(5, 6)
+        Me.OrderGridView.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.OrderGridView.Name = "OrderGridView"
         Me.OrderGridView.ReadOnly = True
         Me.OrderGridView.RowTemplate.Height = 24
-        Me.OrderGridView.Size = New System.Drawing.Size(965, 542)
+        Me.OrderGridView.Size = New System.Drawing.Size(724, 440)
         Me.OrderGridView.TabIndex = 0
         '
         'ManageListsTab
         '
         Me.ManageListsTab.Controls.Add(Me.TabControl2)
-        Me.ManageListsTab.Location = New System.Drawing.Point(4, 25)
-        Me.ManageListsTab.Margin = New System.Windows.Forms.Padding(4)
+        Me.ManageListsTab.Location = New System.Drawing.Point(4, 22)
         Me.ManageListsTab.Name = "ManageListsTab"
-        Me.ManageListsTab.Size = New System.Drawing.Size(984, 559)
+        Me.ManageListsTab.Size = New System.Drawing.Size(736, 452)
         Me.ManageListsTab.TabIndex = 3
         Me.ManageListsTab.Text = "Lists"
         Me.ManageListsTab.UseVisualStyleBackColor = True
@@ -249,10 +301,11 @@ Partial Class Form1
         Me.TabControl2.Controls.Add(Me.ListsMovieRentals)
         Me.TabControl2.Controls.Add(Me.ListsCustomerRentals)
         Me.TabControl2.Controls.Add(Me.ListsAssorted)
-        Me.TabControl2.Location = New System.Drawing.Point(-4, 3)
+        Me.TabControl2.Location = New System.Drawing.Point(-3, 2)
+        Me.TabControl2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(992, 560)
+        Me.TabControl2.Size = New System.Drawing.Size(744, 455)
         Me.TabControl2.TabIndex = 0
         '
         'ListsMovieRentals
@@ -260,10 +313,11 @@ Partial Class Form1
         Me.ListsMovieRentals.Controls.Add(Me.MovieListCombo)
         Me.ListsMovieRentals.Controls.Add(Me.TopMovieDatePicker)
         Me.ListsMovieRentals.Controls.Add(Me.TopYearlyDataGrid)
-        Me.ListsMovieRentals.Location = New System.Drawing.Point(4, 25)
+        Me.ListsMovieRentals.Location = New System.Drawing.Point(4, 22)
+        Me.ListsMovieRentals.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ListsMovieRentals.Name = "ListsMovieRentals"
-        Me.ListsMovieRentals.Padding = New System.Windows.Forms.Padding(3)
-        Me.ListsMovieRentals.Size = New System.Drawing.Size(984, 531)
+        Me.ListsMovieRentals.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ListsMovieRentals.Size = New System.Drawing.Size(736, 429)
         Me.ListsMovieRentals.TabIndex = 0
         Me.ListsMovieRentals.Text = "Top Movie Rentals"
         Me.ListsMovieRentals.UseVisualStyleBackColor = True
@@ -272,28 +326,31 @@ Partial Class Form1
         '
         Me.MovieListCombo.FormattingEnabled = True
         Me.MovieListCombo.Items.AddRange(New Object() {"Yearly", "Monthly", "Daily", "All Time"})
-        Me.MovieListCombo.Location = New System.Drawing.Point(7, 7)
+        Me.MovieListCombo.Location = New System.Drawing.Point(5, 6)
+        Me.MovieListCombo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.MovieListCombo.Name = "MovieListCombo"
-        Me.MovieListCombo.Size = New System.Drawing.Size(156, 24)
+        Me.MovieListCombo.Size = New System.Drawing.Size(118, 21)
         Me.MovieListCombo.TabIndex = 2
         '
         'TopMovieDatePicker
         '
         Me.TopMovieDatePicker.CustomFormat = "yyyy"
         Me.TopMovieDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.TopMovieDatePicker.Location = New System.Drawing.Point(169, 7)
+        Me.TopMovieDatePicker.Location = New System.Drawing.Point(127, 6)
+        Me.TopMovieDatePicker.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TopMovieDatePicker.Name = "TopMovieDatePicker"
         Me.TopMovieDatePicker.ShowUpDown = True
-        Me.TopMovieDatePicker.Size = New System.Drawing.Size(239, 22)
+        Me.TopMovieDatePicker.Size = New System.Drawing.Size(180, 20)
         Me.TopMovieDatePicker.TabIndex = 1
         '
         'TopYearlyDataGrid
         '
         Me.TopYearlyDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.TopYearlyDataGrid.Location = New System.Drawing.Point(7, 41)
+        Me.TopYearlyDataGrid.Location = New System.Drawing.Point(5, 33)
+        Me.TopYearlyDataGrid.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TopYearlyDataGrid.Name = "TopYearlyDataGrid"
         Me.TopYearlyDataGrid.RowTemplate.Height = 24
-        Me.TopYearlyDataGrid.Size = New System.Drawing.Size(974, 484)
+        Me.TopYearlyDataGrid.Size = New System.Drawing.Size(730, 393)
         Me.TopYearlyDataGrid.TabIndex = 0
         '
         'ListsCustomerRentals
@@ -301,9 +358,10 @@ Partial Class Form1
         Me.ListsCustomerRentals.Controls.Add(Me.TopCustomerDataGrid)
         Me.ListsCustomerRentals.Controls.Add(Me.TopCustomerDatePicker)
         Me.ListsCustomerRentals.Controls.Add(Me.CustomerListCombo)
-        Me.ListsCustomerRentals.Location = New System.Drawing.Point(4, 25)
+        Me.ListsCustomerRentals.Location = New System.Drawing.Point(4, 22)
+        Me.ListsCustomerRentals.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ListsCustomerRentals.Name = "ListsCustomerRentals"
-        Me.ListsCustomerRentals.Size = New System.Drawing.Size(984, 531)
+        Me.ListsCustomerRentals.Size = New System.Drawing.Size(736, 429)
         Me.ListsCustomerRentals.TabIndex = 4
         Me.ListsCustomerRentals.Text = "Top Customer Rentals"
         Me.ListsCustomerRentals.UseVisualStyleBackColor = True
@@ -313,21 +371,23 @@ Partial Class Form1
         Me.TopCustomerDataGrid.AllowUserToAddRows = False
         Me.TopCustomerDataGrid.AllowUserToDeleteRows = False
         Me.TopCustomerDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.TopCustomerDataGrid.Location = New System.Drawing.Point(3, 33)
+        Me.TopCustomerDataGrid.Location = New System.Drawing.Point(2, 27)
+        Me.TopCustomerDataGrid.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TopCustomerDataGrid.Name = "TopCustomerDataGrid"
         Me.TopCustomerDataGrid.ReadOnly = True
         Me.TopCustomerDataGrid.RowTemplate.Height = 24
-        Me.TopCustomerDataGrid.Size = New System.Drawing.Size(985, 502)
+        Me.TopCustomerDataGrid.Size = New System.Drawing.Size(739, 408)
         Me.TopCustomerDataGrid.TabIndex = 2
         '
         'TopCustomerDatePicker
         '
         Me.TopCustomerDatePicker.CustomFormat = "yyyy"
         Me.TopCustomerDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.TopCustomerDatePicker.Location = New System.Drawing.Point(136, 5)
+        Me.TopCustomerDatePicker.Location = New System.Drawing.Point(102, 4)
+        Me.TopCustomerDatePicker.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TopCustomerDatePicker.Name = "TopCustomerDatePicker"
         Me.TopCustomerDatePicker.ShowUpDown = True
-        Me.TopCustomerDatePicker.Size = New System.Drawing.Size(242, 22)
+        Me.TopCustomerDatePicker.Size = New System.Drawing.Size(182, 20)
         Me.TopCustomerDatePicker.TabIndex = 1
         '
         'CustomerListCombo
@@ -335,9 +395,10 @@ Partial Class Form1
         Me.CustomerListCombo.AllowDrop = True
         Me.CustomerListCombo.FormattingEnabled = True
         Me.CustomerListCombo.Items.AddRange(New Object() {"Yearly", "Monthly", "Daily", "All Time"})
-        Me.CustomerListCombo.Location = New System.Drawing.Point(8, 4)
+        Me.CustomerListCombo.Location = New System.Drawing.Point(6, 3)
+        Me.CustomerListCombo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CustomerListCombo.Name = "CustomerListCombo"
-        Me.CustomerListCombo.Size = New System.Drawing.Size(121, 24)
+        Me.CustomerListCombo.Size = New System.Drawing.Size(92, 21)
         Me.CustomerListCombo.TabIndex = 0
         '
         'ListsAssorted
@@ -352,9 +413,10 @@ Partial Class Form1
         Me.ListsAssorted.Controls.Add(Me.LabMostGenre)
         Me.ListsAssorted.Controls.Add(Me.LabActorMostMovies)
         Me.ListsAssorted.Controls.Add(Me.LabMostActor)
-        Me.ListsAssorted.Location = New System.Drawing.Point(4, 25)
+        Me.ListsAssorted.Location = New System.Drawing.Point(4, 22)
+        Me.ListsAssorted.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ListsAssorted.Name = "ListsAssorted"
-        Me.ListsAssorted.Size = New System.Drawing.Size(984, 531)
+        Me.ListsAssorted.Size = New System.Drawing.Size(736, 429)
         Me.ListsAssorted.TabIndex = 3
         Me.ListsAssorted.Text = "Assorted"
         Me.ListsAssorted.UseVisualStyleBackColor = True
@@ -363,9 +425,10 @@ Partial Class Form1
         '
         Me.LabMostMonth.AutoSize = True
         Me.LabMostMonth.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabMostMonth.Location = New System.Drawing.Point(30, 361)
+        Me.LabMostMonth.Location = New System.Drawing.Point(22, 293)
+        Me.LabMostMonth.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LabMostMonth.Name = "LabMostMonth"
-        Me.LabMostMonth.Size = New System.Drawing.Size(184, 18)
+        Me.LabMostMonth.Size = New System.Drawing.Size(150, 15)
         Me.LabMostMonth.TabIndex = 9
         Me.LabMostMonth.Text = "Month With Most Rentals: "
         '
@@ -373,9 +436,10 @@ Partial Class Form1
         '
         Me.LabMostDay.AutoSize = True
         Me.LabMostDay.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabMostDay.Location = New System.Drawing.Point(30, 407)
+        Me.LabMostDay.Location = New System.Drawing.Point(22, 331)
+        Me.LabMostDay.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LabMostDay.Name = "LabMostDay"
-        Me.LabMostDay.Size = New System.Drawing.Size(164, 18)
+        Me.LabMostDay.Size = New System.Drawing.Size(134, 15)
         Me.LabMostDay.TabIndex = 8
         Me.LabMostDay.Text = "Day with Most Rentals: "
         '
@@ -383,9 +447,10 @@ Partial Class Form1
         '
         Me.LabHighestCustomer.AutoSize = True
         Me.LabHighestCustomer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabHighestCustomer.Location = New System.Drawing.Point(30, 320)
+        Me.LabHighestCustomer.Location = New System.Drawing.Point(22, 260)
+        Me.LabHighestCustomer.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LabHighestCustomer.Name = "LabHighestCustomer"
-        Me.LabHighestCustomer.Size = New System.Drawing.Size(179, 18)
+        Me.LabHighestCustomer.Size = New System.Drawing.Size(147, 15)
         Me.LabHighestCustomer.TabIndex = 7
         Me.LabHighestCustomer.Text = "Highest Rated Customer: "
         '
@@ -393,9 +458,10 @@ Partial Class Form1
         '
         Me.LabHighestGenre.AutoSize = True
         Me.LabHighestGenre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabHighestGenre.Location = New System.Drawing.Point(30, 281)
+        Me.LabHighestGenre.Location = New System.Drawing.Point(22, 228)
+        Me.LabHighestGenre.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LabHighestGenre.Name = "LabHighestGenre"
-        Me.LabHighestGenre.Size = New System.Drawing.Size(154, 18)
+        Me.LabHighestGenre.Size = New System.Drawing.Size(128, 15)
         Me.LabHighestGenre.TabIndex = 6
         Me.LabHighestGenre.Text = "Highest Rated Genre: "
         '
@@ -403,9 +469,10 @@ Partial Class Form1
         '
         Me.LabHighestMovie.AutoSize = True
         Me.LabHighestMovie.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabHighestMovie.Location = New System.Drawing.Point(30, 243)
+        Me.LabHighestMovie.Location = New System.Drawing.Point(22, 197)
+        Me.LabHighestMovie.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LabHighestMovie.Name = "LabHighestMovie"
-        Me.LabHighestMovie.Size = New System.Drawing.Size(153, 18)
+        Me.LabHighestMovie.Size = New System.Drawing.Size(127, 15)
         Me.LabHighestMovie.TabIndex = 5
         Me.LabHighestMovie.Text = "Highest Rated Movie: "
         '
@@ -413,9 +480,10 @@ Partial Class Form1
         '
         Me.LabHighestActor.AutoSize = True
         Me.LabHighestActor.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabHighestActor.Location = New System.Drawing.Point(30, 203)
+        Me.LabHighestActor.Location = New System.Drawing.Point(22, 165)
+        Me.LabHighestActor.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LabHighestActor.Name = "LabHighestActor"
-        Me.LabHighestActor.Size = New System.Drawing.Size(148, 18)
+        Me.LabHighestActor.Size = New System.Drawing.Size(121, 15)
         Me.LabHighestActor.TabIndex = 4
         Me.LabHighestActor.Text = "Highest Rated Actor: "
         '
@@ -423,9 +491,10 @@ Partial Class Form1
         '
         Me.LabGenreMostMovies.AutoSize = True
         Me.LabGenreMostMovies.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabGenreMostMovies.Location = New System.Drawing.Point(30, 159)
+        Me.LabGenreMostMovies.Location = New System.Drawing.Point(22, 129)
+        Me.LabGenreMostMovies.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LabGenreMostMovies.Name = "LabGenreMostMovies"
-        Me.LabGenreMostMovies.Size = New System.Drawing.Size(177, 18)
+        Me.LabGenreMostMovies.Size = New System.Drawing.Size(144, 15)
         Me.LabGenreMostMovies.TabIndex = 3
         Me.LabGenreMostMovies.Text = "Genre with Most Movies: "
         '
@@ -433,9 +502,10 @@ Partial Class Form1
         '
         Me.LabMostGenre.AutoSize = True
         Me.LabMostGenre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabMostGenre.Location = New System.Drawing.Point(30, 70)
+        Me.LabMostGenre.Location = New System.Drawing.Point(22, 57)
+        Me.LabMostGenre.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LabMostGenre.Name = "LabMostGenre"
-        Me.LabMostGenre.Size = New System.Drawing.Size(146, 18)
+        Me.LabMostGenre.Size = New System.Drawing.Size(120, 15)
         Me.LabMostGenre.TabIndex = 2
         Me.LabMostGenre.Text = "Most Rented Genre: "
         '
@@ -443,9 +513,10 @@ Partial Class Form1
         '
         Me.LabActorMostMovies.AutoSize = True
         Me.LabActorMostMovies.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabActorMostMovies.Location = New System.Drawing.Point(30, 113)
+        Me.LabActorMostMovies.Location = New System.Drawing.Point(22, 92)
+        Me.LabActorMostMovies.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LabActorMostMovies.Name = "LabActorMostMovies"
-        Me.LabActorMostMovies.Size = New System.Drawing.Size(171, 18)
+        Me.LabActorMostMovies.Size = New System.Drawing.Size(137, 15)
         Me.LabActorMostMovies.TabIndex = 1
         Me.LabActorMostMovies.Text = "Actor with Most Movies: "
         '
@@ -453,9 +524,10 @@ Partial Class Form1
         '
         Me.LabMostActor.AutoSize = True
         Me.LabMostActor.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabMostActor.Location = New System.Drawing.Point(30, 29)
+        Me.LabMostActor.Location = New System.Drawing.Point(22, 24)
+        Me.LabMostActor.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LabMostActor.Name = "LabMostActor"
-        Me.LabMostActor.Size = New System.Drawing.Size(140, 18)
+        Me.LabMostActor.Size = New System.Drawing.Size(113, 15)
         Me.LabMostActor.TabIndex = 0
         Me.LabMostActor.Text = "Most Rented Actor: "
         '
@@ -469,81 +541,19 @@ Partial Class Form1
         Me._291ProjectDataSet2.DataSetName = "_291ProjectDataSet"
         Me._291ProjectDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'BtnTest
-        '
-        Me.BtnTest.Location = New System.Drawing.Point(877, 15)
-        Me.BtnTest.Margin = New System.Windows.Forms.Padding(4)
-        Me.BtnTest.Name = "BtnTest"
-        Me.BtnTest.Size = New System.Drawing.Size(100, 28)
-        Me.BtnTest.TabIndex = 4
-        Me.BtnTest.Text = "OpenUserPage(Test)"
-        Me.BtnTest.UseVisualStyleBackColor = True
-        '
-        'ManageActorsTab
-        '
-        Me.ManageActorsTab.Controls.Add(Me.ActorGridView)
-        Me.ManageActorsTab.Controls.Add(Me.EditActorBut)
-        Me.ManageActorsTab.Controls.Add(Me.RemoveActorButton)
-        Me.ManageActorsTab.Controls.Add(Me.AddActorBut)
-        Me.ManageActorsTab.Location = New System.Drawing.Point(4, 25)
-        Me.ManageActorsTab.Name = "ManageActorsTab"
-        Me.ManageActorsTab.Size = New System.Drawing.Size(984, 559)
-        Me.ManageActorsTab.TabIndex = 4
-        Me.ManageActorsTab.Text = "Actors"
-        Me.ManageActorsTab.UseVisualStyleBackColor = True
-        '
-        'AddActorBut
-        '
-        Me.AddActorBut.Location = New System.Drawing.Point(20, 16)
-        Me.AddActorBut.Name = "AddActorBut"
-        Me.AddActorBut.Size = New System.Drawing.Size(101, 27)
-        Me.AddActorBut.TabIndex = 0
-        Me.AddActorBut.Text = "Add Actor"
-        Me.AddActorBut.UseVisualStyleBackColor = True
-        '
-        'RemoveActorButton
-        '
-        Me.RemoveActorButton.Location = New System.Drawing.Point(858, 522)
-        Me.RemoveActorButton.Name = "RemoveActorButton"
-        Me.RemoveActorButton.Size = New System.Drawing.Size(107, 27)
-        Me.RemoveActorButton.TabIndex = 1
-        Me.RemoveActorButton.Text = "Delete Actor"
-        Me.RemoveActorButton.UseVisualStyleBackColor = True
-        '
-        'EditActorBut
-        '
-        Me.EditActorBut.Location = New System.Drawing.Point(743, 522)
-        Me.EditActorBut.Name = "EditActorBut"
-        Me.EditActorBut.Size = New System.Drawing.Size(109, 27)
-        Me.EditActorBut.TabIndex = 2
-        Me.EditActorBut.Text = "Edit Actor"
-        Me.EditActorBut.UseVisualStyleBackColor = True
-        '
-        'ActorGridView
-        '
-        Me.ActorGridView.AllowUserToAddRows = False
-        Me.ActorGridView.AllowUserToDeleteRows = False
-        Me.ActorGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ActorGridView.Location = New System.Drawing.Point(20, 64)
-        Me.ActorGridView.Name = "ActorGridView"
-        Me.ActorGridView.ReadOnly = True
-        Me.ActorGridView.RowTemplate.Height = 24
-        Me.ActorGridView.Size = New System.Drawing.Size(945, 435)
-        Me.ActorGridView.TabIndex = 3
-        '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(993, 623)
-        Me.Controls.Add(Me.BtnTest)
+        Me.ClientSize = New System.Drawing.Size(745, 506)
         Me.Controls.Add(Me.TabControl1)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.Text = "Management"
         Me.TabControl1.ResumeLayout(False)
         Me.ManageMovieTab.ResumeLayout(False)
         CType(Me.MovieGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ManageActorsTab.ResumeLayout(False)
+        CType(Me.ActorGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ManageEmployeesTab.ResumeLayout(False)
         CType(Me.EmployeeGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ManageSalesTab.ResumeLayout(False)
@@ -558,8 +568,6 @@ Partial Class Form1
         Me.ListsAssorted.PerformLayout()
         CType(Me._291ProjectDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me._291ProjectDataSet2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ManageActorsTab.ResumeLayout(False)
-        CType(Me.ActorGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -575,7 +583,6 @@ Partial Class Form1
     Friend WithEvents _291ProjectDataSet1 As _291ProjectDataSet
     Friend WithEvents MovieGridView As DataGridView
     Friend WithEvents _291ProjectDataSet2 As _291ProjectDataSet
-    Friend WithEvents BtnTest As Button
     Friend WithEvents OrderGridView As DataGridView
     Friend WithEvents TabControl2 As TabControl
     Friend WithEvents ListsMovieRentals As TabPage
