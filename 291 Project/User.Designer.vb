@@ -24,29 +24,34 @@ Partial Class User
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Tab_Search = New System.Windows.Forms.TabPage()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.BtnAddMovie = New System.Windows.Forms.Button()
         Me.DGVActorResults = New System.Windows.Forms.DataGridView()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.DGVMovieResults = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.BtnSearch = New System.Windows.Forms.Button()
+        Me.CmbRating = New System.Windows.Forms.ComboBox()
+        Me.CmbGenre = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TxtTitle = New System.Windows.Forms.TextBox()
+        Me.TxtActor = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Tab_History = New System.Windows.Forms.TabPage()
         Me.Tab_Settings = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label_HeldMovies = New System.Windows.Forms.Label()
         Me.DGVHeldMovies = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.BtnOrder = New System.Windows.Forms.Button()
-        Me.DGVCurOrder = New System.Windows.Forms.DataGridView()
+        Me.BtnRemoveMovie = New System.Windows.Forms.Button()
+        Me.BtnQueue = New System.Windows.Forms.Button()
+        Me.DGVCart = New System.Windows.Forms.DataGridView()
         Me.LblCurOrder = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.DGVQueue = New System.Windows.Forms.DataGridView()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.Tab_Search.SuspendLayout()
         CType(Me.DGVActorResults, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,7 +60,9 @@ Partial Class User
         Me.Panel1.SuspendLayout()
         CType(Me.DGVHeldMovies, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        CType(Me.DGVCurOrder, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGVCart, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
+        CType(Me.DGVQueue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -71,7 +78,7 @@ Partial Class User
         '
         'Tab_Search
         '
-        Me.Tab_Search.Controls.Add(Me.Button2)
+        Me.Tab_Search.Controls.Add(Me.BtnAddMovie)
         Me.Tab_Search.Controls.Add(Me.DGVActorResults)
         Me.Tab_Search.Controls.Add(Me.Label5)
         Me.Tab_Search.Controls.Add(Me.DGVMovieResults)
@@ -84,21 +91,21 @@ Partial Class User
         Me.Tab_Search.Text = "Movie Search"
         Me.Tab_Search.UseVisualStyleBackColor = True
         '
-        'Button2
+        'BtnAddMovie
         '
-        Me.Button2.Location = New System.Drawing.Point(400, 83)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 36)
-        Me.Button2.TabIndex = 13
-        Me.Button2.Text = "Add Movie to Order"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BtnAddMovie.Location = New System.Drawing.Point(400, 125)
+        Me.BtnAddMovie.Name = "BtnAddMovie"
+        Me.BtnAddMovie.Size = New System.Drawing.Size(93, 36)
+        Me.BtnAddMovie.TabIndex = 13
+        Me.BtnAddMovie.Text = "Add Movie to Cart"
+        Me.BtnAddMovie.UseVisualStyleBackColor = True
         '
         'DGVActorResults
         '
         Me.DGVActorResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVActorResults.Location = New System.Drawing.Point(265, 28)
+        Me.DGVActorResults.Location = New System.Drawing.Point(6, 107)
         Me.DGVActorResults.Name = "DGVActorResults"
-        Me.DGVActorResults.Size = New System.Drawing.Size(122, 150)
+        Me.DGVActorResults.Size = New System.Drawing.Size(381, 71)
         Me.DGVActorResults.TabIndex = 12
         '
         'Label5
@@ -115,19 +122,19 @@ Partial Class User
         Me.DGVMovieResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVMovieResults.Location = New System.Drawing.Point(6, 28)
         Me.DGVMovieResults.Name = "DGVMovieResults"
-        Me.DGVMovieResults.Size = New System.Drawing.Size(244, 150)
+        Me.DGVMovieResults.Size = New System.Drawing.Size(487, 73)
         Me.DGVMovieResults.TabIndex = 10
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.ComboBox2)
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.BtnSearch)
+        Me.GroupBox1.Controls.Add(Me.CmbRating)
+        Me.GroupBox1.Controls.Add(Me.CmbGenre)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
+        Me.GroupBox1.Controls.Add(Me.TxtTitle)
+        Me.GroupBox1.Controls.Add(Me.TxtActor)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Location = New System.Drawing.Point(3, 184)
         Me.GroupBox1.Name = "GroupBox1"
@@ -136,31 +143,31 @@ Partial Class User
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Search Criteria"
         '
-        'Button1
+        'BtnSearch
         '
-        Me.Button1.Location = New System.Drawing.Point(220, 88)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 10
-        Me.Button1.Text = "Search"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnSearch.Location = New System.Drawing.Point(206, 88)
+        Me.BtnSearch.Name = "BtnSearch"
+        Me.BtnSearch.Size = New System.Drawing.Size(75, 23)
+        Me.BtnSearch.TabIndex = 10
+        Me.BtnSearch.Text = "Search"
+        Me.BtnSearch.UseVisualStyleBackColor = True
         '
-        'ComboBox2
+        'CmbRating
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"""""", "0", "1", "2", "3", "4", "5"})
-        Me.ComboBox2.Location = New System.Drawing.Point(397, 17)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(93, 21)
-        Me.ComboBox2.TabIndex = 9
+        Me.CmbRating.FormattingEnabled = True
+        Me.CmbRating.Items.AddRange(New Object() {"", "0", "1", "2", "3", "4", "5"})
+        Me.CmbRating.Location = New System.Drawing.Point(397, 17)
+        Me.CmbRating.Name = "CmbRating"
+        Me.CmbRating.Size = New System.Drawing.Size(93, 21)
+        Me.CmbRating.TabIndex = 9
         '
-        'ComboBox1
+        'CmbGenre
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(397, 47)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(93, 21)
-        Me.ComboBox1.TabIndex = 8
+        Me.CmbGenre.FormattingEnabled = True
+        Me.CmbGenre.Location = New System.Drawing.Point(397, 47)
+        Me.CmbGenre.Name = "CmbGenre"
+        Me.CmbGenre.Size = New System.Drawing.Size(93, 21)
+        Me.CmbGenre.TabIndex = 8
         '
         'Label1
         '
@@ -189,19 +196,19 @@ Partial Class User
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Rating"
         '
-        'TextBox1
+        'TxtTitle
         '
-        Me.TextBox1.Location = New System.Drawing.Point(55, 19)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(272, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.TxtTitle.Location = New System.Drawing.Point(55, 19)
+        Me.TxtTitle.Name = "TxtTitle"
+        Me.TxtTitle.Size = New System.Drawing.Size(272, 20)
+        Me.TxtTitle.TabIndex = 0
         '
-        'TextBox3
+        'TxtActor
         '
-        Me.TextBox3.Location = New System.Drawing.Point(55, 49)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(272, 20)
-        Me.TextBox3.TabIndex = 2
+        Me.TxtActor.Location = New System.Drawing.Point(55, 49)
+        Me.TxtActor.Name = "TxtActor"
+        Me.TxtActor.Size = New System.Drawing.Size(272, 20)
+        Me.TxtActor.TabIndex = 2
         '
         'Label3
         '
@@ -234,12 +241,22 @@ Partial Class User
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.LightGray
+        Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Label_HeldMovies)
         Me.Panel1.Controls.Add(Me.DGVHeldMovies)
-        Me.Panel1.Location = New System.Drawing.Point(9, 504)
+        Me.Panel1.Location = New System.Drawing.Point(12, 504)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(511, 157)
+        Me.Panel1.Size = New System.Drawing.Size(508, 157)
         Me.Panel1.TabIndex = 2
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(193, 131)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(124, 23)
+        Me.Button3.TabIndex = 2
+        Me.Button3.Text = "Return Selected Movie"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'Label_HeldMovies
         '
@@ -253,52 +270,89 @@ Partial Class User
         'DGVHeldMovies
         '
         Me.DGVHeldMovies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVHeldMovies.Location = New System.Drawing.Point(6, 44)
+        Me.DGVHeldMovies.Location = New System.Drawing.Point(6, 27)
         Me.DGVHeldMovies.Name = "DGVHeldMovies"
-        Me.DGVHeldMovies.Size = New System.Drawing.Size(501, 110)
+        Me.DGVHeldMovies.Size = New System.Drawing.Size(501, 83)
         Me.DGVHeldMovies.TabIndex = 0
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.BtnOrder)
-        Me.Panel2.Controls.Add(Me.DGVCurOrder)
+        Me.Panel2.Controls.Add(Me.BtnRemoveMovie)
+        Me.Panel2.Controls.Add(Me.BtnQueue)
+        Me.Panel2.Controls.Add(Me.DGVCart)
         Me.Panel2.Controls.Add(Me.LblCurOrder)
         Me.Panel2.Location = New System.Drawing.Point(12, 334)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(507, 164)
+        Me.Panel2.Size = New System.Drawing.Size(254, 164)
         Me.Panel2.TabIndex = 3
         '
-        'BtnOrder
+        'BtnRemoveMovie
         '
-        Me.BtnOrder.Location = New System.Drawing.Point(404, 138)
-        Me.BtnOrder.Name = "BtnOrder"
-        Me.BtnOrder.Size = New System.Drawing.Size(75, 23)
-        Me.BtnOrder.TabIndex = 2
-        Me.BtnOrder.Text = "Order"
-        Me.BtnOrder.UseVisualStyleBackColor = True
+        Me.BtnRemoveMovie.Location = New System.Drawing.Point(10, 126)
+        Me.BtnRemoveMovie.Name = "BtnRemoveMovie"
+        Me.BtnRemoveMovie.Size = New System.Drawing.Size(75, 35)
+        Me.BtnRemoveMovie.TabIndex = 3
+        Me.BtnRemoveMovie.Text = "Remove Movie"
+        Me.BtnRemoveMovie.UseVisualStyleBackColor = True
         '
-        'DGVCurOrder
+        'BtnQueue
         '
-        Me.DGVCurOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVCurOrder.Location = New System.Drawing.Point(4, 40)
-        Me.DGVCurOrder.Name = "DGVCurOrder"
-        Me.DGVCurOrder.Size = New System.Drawing.Size(350, 121)
-        Me.DGVCurOrder.TabIndex = 1
+        Me.BtnQueue.Location = New System.Drawing.Point(169, 127)
+        Me.BtnQueue.Name = "BtnQueue"
+        Me.BtnQueue.Size = New System.Drawing.Size(75, 34)
+        Me.BtnQueue.TabIndex = 2
+        Me.BtnQueue.Text = "Order"
+        Me.BtnQueue.UseVisualStyleBackColor = True
+        '
+        'DGVCart
+        '
+        Me.DGVCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVCart.Location = New System.Drawing.Point(7, 27)
+        Me.DGVCart.Name = "DGVCart"
+        Me.DGVCart.Size = New System.Drawing.Size(237, 85)
+        Me.DGVCart.TabIndex = 1
         '
         'LblCurOrder
         '
         Me.LblCurOrder.AutoSize = True
-        Me.LblCurOrder.Location = New System.Drawing.Point(218, 0)
+        Me.LblCurOrder.Location = New System.Drawing.Point(89, 0)
         Me.LblCurOrder.Name = "LblCurOrder"
         Me.LblCurOrder.Size = New System.Drawing.Size(74, 13)
         Me.LblCurOrder.TabIndex = 0
         Me.LblCurOrder.Text = "Shopping Cart"
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.DGVQueue)
+        Me.Panel3.Controls.Add(Me.Label6)
+        Me.Panel3.Location = New System.Drawing.Point(272, 334)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(248, 164)
+        Me.Panel3.TabIndex = 4
+        '
+        'DGVQueue
+        '
+        Me.DGVQueue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVQueue.Location = New System.Drawing.Point(11, 27)
+        Me.DGVQueue.Name = "DGVQueue"
+        Me.DGVQueue.Size = New System.Drawing.Size(226, 85)
+        Me.DGVQueue.TabIndex = 1
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(106, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(39, 13)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Queue"
         '
         'User
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(529, 673)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.TabControl1)
@@ -316,7 +370,10 @@ Partial Class User
         CType(Me.DGVHeldMovies, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.DGVCurOrder, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGVCart, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        CType(Me.DGVQueue, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -330,20 +387,25 @@ Partial Class User
     Friend WithEvents Label_HeldMovies As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents LblCurOrder As Label
-    Friend WithEvents BtnOrder As Button
-    Friend WithEvents DGVCurOrder As DataGridView
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents BtnQueue As Button
+    Friend WithEvents DGVCart As DataGridView
+    Friend WithEvents TxtTitle As TextBox
+    Friend WithEvents TxtActor As TextBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents BtnSearch As Button
+    Friend WithEvents CmbRating As ComboBox
+    Friend WithEvents CmbGenre As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents DGVMovieResults As DataGridView
-    Friend WithEvents Button2 As Button
+    Friend WithEvents BtnAddMovie As Button
     Friend WithEvents DGVActorResults As DataGridView
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents DGVQueue As DataGridView
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Button3 As Button
+    Friend WithEvents BtnRemoveMovie As Button
 End Class
