@@ -325,12 +325,6 @@ Public Class Form1
 
     End Sub
 
-    Private Sub BtnTest_Click(sender As Object, e As EventArgs) Handles BtnTest.Click
-        Dim testing = New CustRep
-        testing.Show()
-        ' testing.id
-    End Sub
-
     Private Sub TopMovieDatePicker_ValueChanged(sender As Object, e As EventArgs) Handles TopMovieDatePicker.ValueChanged
         TopMovieData()
     End Sub

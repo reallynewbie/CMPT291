@@ -544,18 +544,71 @@ Partial Class Form1
         '
         'BtnTest
         '
-        Me.BtnTest.Location = New System.Drawing.Point(658, 12)
+        Me.BtnTest.Location = New System.Drawing.Point(877, 15)
+        Me.BtnTest.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnTest.Name = "BtnTest"
-        Me.BtnTest.Size = New System.Drawing.Size(75, 23)
+        Me.BtnTest.Size = New System.Drawing.Size(100, 28)
         Me.BtnTest.TabIndex = 4
         Me.BtnTest.Text = "OpenUserPage(Test)"
         Me.BtnTest.UseVisualStyleBackColor = True
+        '
+        'ManageActorsTab
+        '
+        Me.ManageActorsTab.Controls.Add(Me.ActorGridView)
+        Me.ManageActorsTab.Controls.Add(Me.EditActorBut)
+        Me.ManageActorsTab.Controls.Add(Me.RemoveActorButton)
+        Me.ManageActorsTab.Controls.Add(Me.AddActorBut)
+        Me.ManageActorsTab.Location = New System.Drawing.Point(4, 25)
+        Me.ManageActorsTab.Name = "ManageActorsTab"
+        Me.ManageActorsTab.Size = New System.Drawing.Size(984, 559)
+        Me.ManageActorsTab.TabIndex = 4
+        Me.ManageActorsTab.Text = "Actors"
+        Me.ManageActorsTab.UseVisualStyleBackColor = True
+        '
+        'AddActorBut
+        '
+        Me.AddActorBut.Location = New System.Drawing.Point(20, 16)
+        Me.AddActorBut.Name = "AddActorBut"
+        Me.AddActorBut.Size = New System.Drawing.Size(101, 27)
+        Me.AddActorBut.TabIndex = 0
+        Me.AddActorBut.Text = "Add Actor"
+        Me.AddActorBut.UseVisualStyleBackColor = True
+        '
+        'RemoveActorButton
+        '
+        Me.RemoveActorButton.Location = New System.Drawing.Point(858, 522)
+        Me.RemoveActorButton.Name = "RemoveActorButton"
+        Me.RemoveActorButton.Size = New System.Drawing.Size(107, 27)
+        Me.RemoveActorButton.TabIndex = 1
+        Me.RemoveActorButton.Text = "Delete Actor"
+        Me.RemoveActorButton.UseVisualStyleBackColor = True
+        '
+        'EditActorBut
+        '
+        Me.EditActorBut.Location = New System.Drawing.Point(743, 522)
+        Me.EditActorBut.Name = "EditActorBut"
+        Me.EditActorBut.Size = New System.Drawing.Size(109, 27)
+        Me.EditActorBut.TabIndex = 2
+        Me.EditActorBut.Text = "Edit Actor"
+        Me.EditActorBut.UseVisualStyleBackColor = True
+        '
+        'ActorGridView
+        '
+        Me.ActorGridView.AllowUserToAddRows = False
+        Me.ActorGridView.AllowUserToDeleteRows = False
+        Me.ActorGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ActorGridView.Location = New System.Drawing.Point(20, 64)
+        Me.ActorGridView.Name = "ActorGridView"
+        Me.ActorGridView.ReadOnly = True
+        Me.ActorGridView.RowTemplate.Height = 24
+        Me.ActorGridView.Size = New System.Drawing.Size(945, 435)
+        Me.ActorGridView.TabIndex = 3
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(745, 506)
+        Me.ClientSize = New System.Drawing.Size(993, 623)
         Me.Controls.Add(Me.BtnTest)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "Form1"
@@ -594,7 +647,6 @@ Partial Class Form1
     Friend WithEvents _291ProjectDataSet1 As _291ProjectDataSet
     Friend WithEvents MovieGridView As DataGridView
     Friend WithEvents _291ProjectDataSet2 As _291ProjectDataSet
-    Friend WithEvents BtnTest As Button
     Friend WithEvents OrderGridView As DataGridView
     Friend WithEvents TabControl2 As TabControl
     Friend WithEvents ListsMovieRentals As TabPage
