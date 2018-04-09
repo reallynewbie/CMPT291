@@ -72,16 +72,34 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActorGenreForm.designer.vb">
+      <DependentUpon>ActorGenreForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ActorGenreForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AddActorForm.Designer.vb">
       <DependentUpon>AddActorForm.vb</DependentUpon>
     </Compile>
     <Compile Include="AddActorForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AddCustForm.Designer.vb">
+      <DependentUpon>AddCustForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddCustForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AddEmployeeForm.Designer.vb">
       <DependentUpon>AddEmployeeForm.vb</DependentUpon>
     </Compile>
     <Compile Include="AddEmployeeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustRep.Designer.vb">
+      <DependentUpon>CustRep.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustRep.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.vb">
@@ -140,11 +158,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ActorGenreForm.resx">
+      <DependentUpon>ActorGenreForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddActorForm.resx">
       <DependentUpon>AddActorForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddCustForm.resx">
+      <DependentUpon>AddCustForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEmployeeForm.resx">
       <DependentUpon>AddEmployeeForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustRep.resx">
+      <DependentUpon>CustRep.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>

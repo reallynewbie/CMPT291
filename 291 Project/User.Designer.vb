@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class User
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class User
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Tab_Search = New System.Windows.Forms.TabPage()
@@ -218,6 +218,34 @@ Partial Class User
         Me.Label3.Size = New System.Drawing.Size(43, 13)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Starring"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(188, 3)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(272, 20)
+        Me.TextBox1.TabIndex = 0
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(188, 28)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(272, 20)
+        Me.TextBox2.TabIndex = 1
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(188, 53)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(272, 20)
+        Me.TextBox3.TabIndex = 2
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(188, 78)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(272, 20)
+        Me.TextBox4.TabIndex = 3
         '
         'Tab_History
         '

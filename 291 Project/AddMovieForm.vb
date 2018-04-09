@@ -80,4 +80,8 @@ Public Class AddMovieForm
         genbox.mid = id
         genbox.Show()
     End Sub
+
+    Private Sub AddTitleBox_TextChanged(sender As Object, e As EventArgs) Handles AddTitleBox.TextChanged
+
+    End Sub
 End Class
