@@ -22,38 +22,40 @@ Partial Class CustRep
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.CustRepTabs = New System.Windows.Forms.TabControl()
         Me.Orders = New System.Windows.Forms.TabPage()
+        Me.DeleteOrderButton = New System.Windows.Forms.Button()
+        Me.ApproveOrderButton = New System.Windows.Forms.Button()
+        Me.OrdersGridView = New System.Windows.Forms.DataGridView()
         Me.Customers = New System.Windows.Forms.TabPage()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.TabControl1.SuspendLayout()
+        Me.DeleteCustButton = New System.Windows.Forms.Button()
+        Me.EditCustButton = New System.Windows.Forms.Button()
+        Me.AddCustButton = New System.Windows.Forms.Button()
+        Me.CustomerGridView = New System.Windows.Forms.DataGridView()
+        Me.MailButton = New System.Windows.Forms.Button()
+        Me.CustRepTabs.SuspendLayout()
         Me.Orders.SuspendLayout()
+        CType(Me.OrdersGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Customers.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomerGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TabControl1
+        'CustRepTabs
         '
-        Me.TabControl1.Controls.Add(Me.Orders)
-        Me.TabControl1.Controls.Add(Me.Customers)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 12)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(776, 408)
-        Me.TabControl1.TabIndex = 0
+        Me.CustRepTabs.Controls.Add(Me.Orders)
+        Me.CustRepTabs.Controls.Add(Me.Customers)
+        Me.CustRepTabs.Location = New System.Drawing.Point(12, 12)
+        Me.CustRepTabs.Name = "CustRepTabs"
+        Me.CustRepTabs.SelectedIndex = 0
+        Me.CustRepTabs.Size = New System.Drawing.Size(776, 408)
+        Me.CustRepTabs.TabIndex = 0
         '
         'Orders
         '
-        Me.Orders.Controls.Add(Me.Button5)
-        Me.Orders.Controls.Add(Me.Button4)
-        Me.Orders.Controls.Add(Me.DataGridView2)
+        Me.Orders.Controls.Add(Me.MailButton)
+        Me.Orders.Controls.Add(Me.DeleteOrderButton)
+        Me.Orders.Controls.Add(Me.ApproveOrderButton)
+        Me.Orders.Controls.Add(Me.OrdersGridView)
         Me.Orders.Location = New System.Drawing.Point(4, 22)
         Me.Orders.Name = "Orders"
         Me.Orders.Padding = New System.Windows.Forms.Padding(3)
@@ -62,12 +64,38 @@ Partial Class CustRep
         Me.Orders.Text = "Orders"
         Me.Orders.UseVisualStyleBackColor = True
         '
+        'DeleteOrderButton
+        '
+        Me.DeleteOrderButton.Location = New System.Drawing.Point(662, 353)
+        Me.DeleteOrderButton.Name = "DeleteOrderButton"
+        Me.DeleteOrderButton.Size = New System.Drawing.Size(75, 23)
+        Me.DeleteOrderButton.TabIndex = 2
+        Me.DeleteOrderButton.Text = "Delete"
+        Me.DeleteOrderButton.UseVisualStyleBackColor = True
+        '
+        'ApproveOrderButton
+        '
+        Me.ApproveOrderButton.Location = New System.Drawing.Point(581, 353)
+        Me.ApproveOrderButton.Name = "ApproveOrderButton"
+        Me.ApproveOrderButton.Size = New System.Drawing.Size(75, 23)
+        Me.ApproveOrderButton.TabIndex = 1
+        Me.ApproveOrderButton.Text = "Approve"
+        Me.ApproveOrderButton.UseVisualStyleBackColor = True
+        '
+        'OrdersGridView
+        '
+        Me.OrdersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.OrdersGridView.Location = New System.Drawing.Point(17, 16)
+        Me.OrdersGridView.Name = "OrdersGridView"
+        Me.OrdersGridView.Size = New System.Drawing.Size(734, 331)
+        Me.OrdersGridView.TabIndex = 0
+        '
         'Customers
         '
-        Me.Customers.Controls.Add(Me.Button3)
-        Me.Customers.Controls.Add(Me.Button2)
-        Me.Customers.Controls.Add(Me.Button1)
-        Me.Customers.Controls.Add(Me.DataGridView1)
+        Me.Customers.Controls.Add(Me.DeleteCustButton)
+        Me.Customers.Controls.Add(Me.EditCustButton)
+        Me.Customers.Controls.Add(Me.AddCustButton)
+        Me.Customers.Controls.Add(Me.CustomerGridView)
         Me.Customers.Location = New System.Drawing.Point(4, 22)
         Me.Customers.Name = "Customers"
         Me.Customers.Padding = New System.Windows.Forms.Padding(3)
@@ -76,92 +104,76 @@ Partial Class CustRep
         Me.Customers.Text = "Customers"
         Me.Customers.UseVisualStyleBackColor = True
         '
-        'Button3
+        'DeleteCustButton
         '
-        Me.Button3.Location = New System.Drawing.Point(661, 353)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 4
-        Me.Button3.Text = "Delete"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.DeleteCustButton.Location = New System.Drawing.Point(661, 353)
+        Me.DeleteCustButton.Name = "DeleteCustButton"
+        Me.DeleteCustButton.Size = New System.Drawing.Size(75, 23)
+        Me.DeleteCustButton.TabIndex = 4
+        Me.DeleteCustButton.Text = "Delete"
+        Me.DeleteCustButton.UseVisualStyleBackColor = True
         '
-        'Button2
+        'EditCustButton
         '
-        Me.Button2.Location = New System.Drawing.Point(580, 353)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Edit"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.EditCustButton.Location = New System.Drawing.Point(580, 353)
+        Me.EditCustButton.Name = "EditCustButton"
+        Me.EditCustButton.Size = New System.Drawing.Size(75, 23)
+        Me.EditCustButton.TabIndex = 3
+        Me.EditCustButton.Text = "Edit"
+        Me.EditCustButton.UseVisualStyleBackColor = True
         '
-        'Button1
+        'AddCustButton
         '
-        Me.Button1.Location = New System.Drawing.Point(499, 353)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Add"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.AddCustButton.Location = New System.Drawing.Point(499, 353)
+        Me.AddCustButton.Name = "AddCustButton"
+        Me.AddCustButton.Size = New System.Drawing.Size(75, 23)
+        Me.AddCustButton.TabIndex = 2
+        Me.AddCustButton.Text = "Add"
+        Me.AddCustButton.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'CustomerGridView
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(17, 16)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(733, 331)
-        Me.DataGridView1.TabIndex = 0
+        Me.CustomerGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.CustomerGridView.Location = New System.Drawing.Point(17, 16)
+        Me.CustomerGridView.Name = "CustomerGridView"
+        Me.CustomerGridView.Size = New System.Drawing.Size(734, 331)
+        Me.CustomerGridView.TabIndex = 0
         '
-        'DataGridView2
+        'MailButton
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(15, 16)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(731, 329)
-        Me.DataGridView2.TabIndex = 0
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(564, 351)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 1
-        Me.Button4.Text = "Approve"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(657, 351)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 23)
-        Me.Button5.TabIndex = 2
-        Me.Button5.Text = "Delete"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.MailButton.Location = New System.Drawing.Point(30, 353)
+        Me.MailButton.Name = "MailButton"
+        Me.MailButton.Size = New System.Drawing.Size(105, 23)
+        Me.MailButton.TabIndex = 3
+        Me.MailButton.Text = "Generate Mail List"
+        Me.MailButton.UseVisualStyleBackColor = True
         '
         'CustRep
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.CustRepTabs)
         Me.Name = "CustRep"
         Me.Text = "Customer Representative"
-        Me.TabControl1.ResumeLayout(False)
+        Me.CustRepTabs.ResumeLayout(False)
         Me.Orders.ResumeLayout(False)
+        CType(Me.OrdersGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Customers.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomerGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents CustRepTabs As TabControl
     Friend WithEvents Orders As TabPage
     Friend WithEvents Customers As TabPage
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents DataGridView2 As DataGridView
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
+    Friend WithEvents CustomerGridView As DataGridView
+    Friend WithEvents AddCustButton As Button
+    Friend WithEvents EditCustButton As Button
+    Friend WithEvents DeleteCustButton As Button
+    Friend WithEvents OrdersGridView As DataGridView
+    Friend WithEvents ApproveOrderButton As Button
+    Friend WithEvents DeleteOrderButton As Button
+    Friend WithEvents MailButton As Button
 End Class
