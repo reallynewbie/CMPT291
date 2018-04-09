@@ -25,19 +25,19 @@ Partial Class User
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Tab_Search = New System.Windows.Forms.TabPage()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Tab_History = New System.Windows.Forms.TabPage()
         Me.Tab_Settings = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label_HeldMovies = New System.Windows.Forms.Label()
         Me.DGVHeldMovies = New System.Windows.Forms.DataGridView()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.LblCurOrder = New System.Windows.Forms.Label()
-        Me.DGVCurOrder = New System.Windows.Forms.DataGridView()
         Me.BtnOrder = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.DGVCurOrder = New System.Windows.Forms.DataGridView()
+        Me.LblCurOrder = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.Tab_Search.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -89,6 +89,34 @@ Partial Class User
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(929, 108)
         Me.TableLayoutPanel1.TabIndex = 0
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(188, 3)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(272, 20)
+        Me.TextBox1.TabIndex = 0
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(188, 28)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(272, 20)
+        Me.TextBox2.TabIndex = 1
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(188, 53)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(272, 20)
+        Me.TextBox3.TabIndex = 2
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(188, 78)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(272, 20)
+        Me.TextBox4.TabIndex = 3
         '
         'Tab_History
         '
@@ -146,23 +174,6 @@ Partial Class User
         Me.Panel2.Size = New System.Drawing.Size(929, 164)
         Me.Panel2.TabIndex = 3
         '
-        'LblCurOrder
-        '
-        Me.LblCurOrder.AutoSize = True
-        Me.LblCurOrder.Location = New System.Drawing.Point(432, 4)
-        Me.LblCurOrder.Name = "LblCurOrder"
-        Me.LblCurOrder.Size = New System.Drawing.Size(70, 13)
-        Me.LblCurOrder.TabIndex = 0
-        Me.LblCurOrder.Text = "Current Order"
-        '
-        'DGVCurOrder
-        '
-        Me.DGVCurOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVCurOrder.Location = New System.Drawing.Point(0, 37)
-        Me.DGVCurOrder.Name = "DGVCurOrder"
-        Me.DGVCurOrder.Size = New System.Drawing.Size(783, 127)
-        Me.DGVCurOrder.TabIndex = 1
-        '
         'BtnOrder
         '
         Me.BtnOrder.Location = New System.Drawing.Point(828, 85)
@@ -172,33 +183,22 @@ Partial Class User
         Me.BtnOrder.Text = "Order"
         Me.BtnOrder.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'DGVCurOrder
         '
-        Me.TextBox1.Location = New System.Drawing.Point(188, 3)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(272, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.DGVCurOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVCurOrder.Location = New System.Drawing.Point(0, 37)
+        Me.DGVCurOrder.Name = "DGVCurOrder"
+        Me.DGVCurOrder.Size = New System.Drawing.Size(783, 127)
+        Me.DGVCurOrder.TabIndex = 1
         '
-        'TextBox2
+        'LblCurOrder
         '
-        Me.TextBox2.Location = New System.Drawing.Point(188, 28)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(272, 20)
-        Me.TextBox2.TabIndex = 1
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(188, 53)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(272, 20)
-        Me.TextBox3.TabIndex = 2
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(188, 78)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(272, 20)
-        Me.TextBox4.TabIndex = 3
+        Me.LblCurOrder.AutoSize = True
+        Me.LblCurOrder.Location = New System.Drawing.Point(432, 4)
+        Me.LblCurOrder.Name = "LblCurOrder"
+        Me.LblCurOrder.Size = New System.Drawing.Size(70, 13)
+        Me.LblCurOrder.TabIndex = 0
+        Me.LblCurOrder.Text = "Current Order"
         '
         'User
         '

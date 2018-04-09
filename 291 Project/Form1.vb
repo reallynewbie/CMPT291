@@ -326,7 +326,7 @@ Public Class Form1
     End Sub
 
     Private Sub BtnTest_Click(sender As Object, e As EventArgs) Handles BtnTest.Click
-        Dim testing = New User
+        Dim testing = New CustRep
         testing.Show()
         ' testing.id
     End Sub
