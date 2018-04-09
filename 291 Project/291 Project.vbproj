@@ -85,6 +85,18 @@
     <Compile Include="AddMovieForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CustRep.Designer.vb">
+      <DependentUpon>CustRep.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustRep.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCustForm.Designer.vb">
+      <DependentUpon>AddCustForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddCustForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -121,6 +133,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddMovieForm.resx">
       <DependentUpon>AddMovieForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustRep.resx">
+      <DependentUpon>CustRep.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCustForm.resx">
+      <DependentUpon>AddCustForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
