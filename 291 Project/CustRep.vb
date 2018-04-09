@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Imports System.Data
+Imports System.IO
 
 Public Class CustRep
     Private myConn As SqlConnection = New SqlConnection("Initial Catalog=CMPT291_Project;" & "Data Source=localhost;Integrated Security=SSPI")
@@ -7,6 +7,7 @@ Public Class CustRep
     Private myReader As SqlDataReader
     Private results As String
     Private test As String
+    Private eid As Int16 = 1
     Private OrderDT = New DataTable()
     Private CustDT = New DataTable()
 
@@ -21,10 +22,6 @@ Public Class CustRep
 
         RefreshCustData()
         RefreshOrderData()
-
-    End Sub
-
-    Private Sub CustomerGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles CustomerGridView.CellContentClick
 
     End Sub
 
@@ -74,12 +71,23 @@ Public Class CustRep
     End Sub
 
     Private Sub ApproveOrderButton_Click(sender As Object, e As EventArgs) Handles ApproveOrderButton.Click
-        Dim ApproveChoice As DialogResult
-        ApproveChoice = MsgBox("We couldn't figure out how to 'record orders'. This is a placeholder.", MessageBoxButtons.OKCancel)
-    End Sub
+        Dim AllowChoice As DialogResult
+        AllowChoice = MsgBox("Are you sure you want to approve these orders?", MessageBoxButtons.OKCancel)
+        If AllowChoice = DialogResult.OK Then
 
-    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles OrdersGridView.CellContentClick
+            myConn.Open()
 
+            For Each row As DataGridViewRow In OrdersGridView.SelectedRows
+                myCmd = myConn.CreateCommand
+                Dim Oid As Integer
+                Oid = row.Cells(0).Value
+                myCmd.CommandText = "Update Orders Set EID = " + eid.ToString + " where OID = " + Oid.ToString
+                myCmd.ExecuteNonQuery()
+
+            Next
+            myConn.Close()
+            RefreshOrderData()
+        End If
     End Sub
 
     Private Sub DeleteOrder_Click(sender As Object, e As EventArgs) Handles DeleteOrderButton.Click
@@ -93,7 +101,7 @@ Public Class CustRep
                 myCmd = myConn.CreateCommand
                 Dim Oid As Integer
                 Oid = row.Cells(0).Value
-                myCmd.CommandText = "Delete From Order where OID = " + Oid.ToString
+                myCmd.CommandText = "Delete From Orders where OID = " + Oid.ToString
                 myCmd.ExecuteNonQuery()
 
             Next
@@ -124,7 +132,7 @@ Public Class CustRep
 
     Public Sub RefreshOrderData()
         myCmd = myConn.CreateCommand
-        myCmd.CommandText = "SELECT OID, Date, ExpectedReturn, ActualReturn, MID, CID, EID From Orders"
+        myCmd.CommandText = "Select OID, Date, ExpectedReturn, ActualReturn, MID, CID, EID FROM Orders WHERE EID Is NULL"
         myConn.Open()
 
         myReader = myCmd.ExecuteReader()
@@ -145,19 +153,33 @@ Public Class CustRep
         Dim Mail As DialogResult
         Mail = MsgBox("Are you sure you want to generate a mail list?", MessageBoxButtons.OKCancel)
         If Mail = DialogResult.OK Then
+            Dim path As String = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
+            Using sw As StreamWriter = File.CreateText(path & Convert.ToString("\EmailList.txt"))
+                myConn.Open()
 
-            myConn.Open()
+                For Each row As DataGridViewRow In CustomerGridView.SelectedRows
+                    myCmd = myConn.CreateCommand
+                    Dim Cid As Integer
+                    Cid = row.Cells(0).Value
+                    myCmd.CommandText = "SELECT Email From Customer"
+                    myReader = myCmd.ExecuteReader()
 
-            For Each row As DataGridViewRow In CustomerGridView.SelectedRows
-                myCmd = myConn.CreateCommand
-                Dim Cid As Integer
-                Cid = row.Cells(0).Value
-                myCmd.CommandText = "SELECT CID, Email From Customer"
-                myCmd.ExecuteNonQuery()
+                    Do While myReader.Read()
+                        sw.WriteLine(myReader.GetValue(0))
+                    Loop
+                Next
+                myReader.Close()
+                myConn.Close()
 
-            Next
-            myConn.Close()
+                sw.Flush()
+            End Using
 
         End If
     End Sub
+
+    Private Sub GenSimMovListButton_Click(sender As Object, e As EventArgs) Handles GenSimMovListButton.Click
+        Dim ApproveChoice As DialogResult
+        ApproveChoice = MsgBox("This is a placeholder. Have a nice day!", MessageBoxButtons.OKCancel)
+    End Sub
+
 End Class

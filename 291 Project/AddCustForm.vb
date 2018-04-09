@@ -41,6 +41,7 @@ Public Class AddCustForm
             StateBox.Text = state
             ZipBox.Text = zip
             EmailBox.Text = email
+            CreditBox.Text = credit
             AccountBox.Text = account
         End If
     End Sub
@@ -55,29 +56,16 @@ Public Class AddCustForm
         zip = ZipBox.Text
         email = EmailBox.Text
         credit = CreditBox.Text
-        rating = RatingBox.Text
         account = AccountBox.Text
         rating = "0.0"
         If IsNumeric(CreditBox.Text) Then
-            myCmd.CommandText = "INSERT INTO Customer Values(" + id.ToString + ",'" + first + "'," + last + "," + address + "," + city + "," + state + "," + zip + "," + email + "," + credit + "," + rating + "," + account + ")"
+            myCmd.CommandText = "INSERT INTO Customer Values(" + id.ToString + ",'" + first + "','" + last + "','" + address + "','" + city + "','" + state + "','" + zip + "','" + email + "','" + credit + "','" + rating + "','" + account + "')"
             myConn.Open()
             myCmd.ExecuteNonQuery()
             myConn.Close()
             CustRep.RefreshCustData()
             Me.Close()
         End If
-
-    End Sub
-
-    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
-
-    End Sub
-
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles FirstNameBox.TextChanged
-
-    End Sub
-
-    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles EmailBox.TextChanged
 
     End Sub
 

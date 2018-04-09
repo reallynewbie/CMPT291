@@ -42,9 +42,7 @@ Partial Class AddCustForm
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.CreditBox = New System.Windows.Forms.TextBox()
-        Me.RatingBox = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'FirstNameBox
@@ -91,7 +89,7 @@ Partial Class AddCustForm
         '
         'AddCustButton
         '
-        Me.AddCustButton.Location = New System.Drawing.Point(60, 525)
+        Me.AddCustButton.Location = New System.Drawing.Point(61, 481)
         Me.AddCustButton.Name = "AddCustButton"
         Me.AddCustButton.Size = New System.Drawing.Size(75, 23)
         Me.AddCustButton.TabIndex = 6
@@ -100,7 +98,7 @@ Partial Class AddCustForm
         '
         'CancelCustButton
         '
-        Me.CancelCustButton.Location = New System.Drawing.Point(171, 525)
+        Me.CancelCustButton.Location = New System.Drawing.Point(171, 481)
         Me.CancelCustButton.Name = "CancelCustButton"
         Me.CancelCustButton.Size = New System.Drawing.Size(75, 23)
         Me.CancelCustButton.TabIndex = 7
@@ -179,7 +177,7 @@ Partial Class AddCustForm
         '
         'AccountBox
         '
-        Me.AccountBox.Location = New System.Drawing.Point(60, 486)
+        Me.AccountBox.Location = New System.Drawing.Point(61, 440)
         Me.AccountBox.Name = "AccountBox"
         Me.AccountBox.Size = New System.Drawing.Size(185, 20)
         Me.AccountBox.TabIndex = 16
@@ -187,7 +185,7 @@ Partial Class AddCustForm
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(58, 470)
+        Me.Label8.Location = New System.Drawing.Point(58, 424)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(74, 13)
         Me.Label8.TabIndex = 17
@@ -205,44 +203,26 @@ Partial Class AddCustForm
         '
         'CreditBox
         '
-        Me.CreditBox.Location = New System.Drawing.Point(60, 380)
+        Me.CreditBox.Location = New System.Drawing.Point(60, 386)
         Me.CreditBox.Name = "CreditBox"
         Me.CreditBox.Size = New System.Drawing.Size(185, 20)
         Me.CreditBox.TabIndex = 19
         '
-        'RatingBox
-        '
-        Me.RatingBox.Location = New System.Drawing.Point(60, 432)
-        Me.RatingBox.Name = "RatingBox"
-        Me.RatingBox.Size = New System.Drawing.Size(185, 20)
-        Me.RatingBox.TabIndex = 20
-        '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(58, 364)
+        Me.Label10.Location = New System.Drawing.Point(58, 370)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(59, 13)
         Me.Label10.TabIndex = 21
         Me.Label10.Text = "Credit Card"
         '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(58, 416)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(38, 13)
-        Me.Label11.TabIndex = 22
-        Me.Label11.Text = "Rating"
-        '
         'AddCustForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(312, 568)
-        Me.Controls.Add(Me.Label11)
+        Me.ClientSize = New System.Drawing.Size(312, 529)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.RatingBox)
         Me.Controls.Add(Me.CreditBox)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
@@ -290,7 +270,5 @@ Partial Class AddCustForm
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents CreditBox As TextBox
-    Friend WithEvents RatingBox As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents Label11 As Label
 End Class

@@ -28,11 +28,12 @@ Partial Class CustRep
         Me.ApproveOrderButton = New System.Windows.Forms.Button()
         Me.OrdersGridView = New System.Windows.Forms.DataGridView()
         Me.Customers = New System.Windows.Forms.TabPage()
+        Me.GenSimMovListButton = New System.Windows.Forms.Button()
+        Me.MailButton = New System.Windows.Forms.Button()
         Me.DeleteCustButton = New System.Windows.Forms.Button()
         Me.EditCustButton = New System.Windows.Forms.Button()
         Me.AddCustButton = New System.Windows.Forms.Button()
         Me.CustomerGridView = New System.Windows.Forms.DataGridView()
-        Me.MailButton = New System.Windows.Forms.Button()
         Me.CustRepTabs.SuspendLayout()
         Me.Orders.SuspendLayout()
         CType(Me.OrdersGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,7 +53,6 @@ Partial Class CustRep
         '
         'Orders
         '
-        Me.Orders.Controls.Add(Me.MailButton)
         Me.Orders.Controls.Add(Me.DeleteOrderButton)
         Me.Orders.Controls.Add(Me.ApproveOrderButton)
         Me.Orders.Controls.Add(Me.OrdersGridView)
@@ -84,14 +84,19 @@ Partial Class CustRep
         '
         'OrdersGridView
         '
+        Me.OrdersGridView.AllowUserToAddRows = False
+        Me.OrdersGridView.AllowUserToDeleteRows = False
         Me.OrdersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.OrdersGridView.Location = New System.Drawing.Point(17, 16)
         Me.OrdersGridView.Name = "OrdersGridView"
+        Me.OrdersGridView.ReadOnly = True
         Me.OrdersGridView.Size = New System.Drawing.Size(734, 331)
         Me.OrdersGridView.TabIndex = 0
         '
         'Customers
         '
+        Me.Customers.Controls.Add(Me.GenSimMovListButton)
+        Me.Customers.Controls.Add(Me.MailButton)
         Me.Customers.Controls.Add(Me.DeleteCustButton)
         Me.Customers.Controls.Add(Me.EditCustButton)
         Me.Customers.Controls.Add(Me.AddCustButton)
@@ -103,6 +108,24 @@ Partial Class CustRep
         Me.Customers.TabIndex = 1
         Me.Customers.Text = "Customers"
         Me.Customers.UseVisualStyleBackColor = True
+        '
+        'GenSimMovListButton
+        '
+        Me.GenSimMovListButton.Location = New System.Drawing.Point(195, 353)
+        Me.GenSimMovListButton.Name = "GenSimMovListButton"
+        Me.GenSimMovListButton.Size = New System.Drawing.Size(155, 23)
+        Me.GenSimMovListButton.TabIndex = 6
+        Me.GenSimMovListButton.Text = "Generate Similar Movie List"
+        Me.GenSimMovListButton.UseVisualStyleBackColor = True
+        '
+        'MailButton
+        '
+        Me.MailButton.Location = New System.Drawing.Point(34, 353)
+        Me.MailButton.Name = "MailButton"
+        Me.MailButton.Size = New System.Drawing.Size(155, 23)
+        Me.MailButton.TabIndex = 5
+        Me.MailButton.Text = "Generate Mail List"
+        Me.MailButton.UseVisualStyleBackColor = True
         '
         'DeleteCustButton
         '
@@ -133,20 +156,14 @@ Partial Class CustRep
         '
         'CustomerGridView
         '
+        Me.CustomerGridView.AllowUserToAddRows = False
+        Me.CustomerGridView.AllowUserToDeleteRows = False
         Me.CustomerGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.CustomerGridView.Location = New System.Drawing.Point(17, 16)
         Me.CustomerGridView.Name = "CustomerGridView"
+        Me.CustomerGridView.ReadOnly = True
         Me.CustomerGridView.Size = New System.Drawing.Size(734, 331)
         Me.CustomerGridView.TabIndex = 0
-        '
-        'MailButton
-        '
-        Me.MailButton.Location = New System.Drawing.Point(30, 353)
-        Me.MailButton.Name = "MailButton"
-        Me.MailButton.Size = New System.Drawing.Size(105, 23)
-        Me.MailButton.TabIndex = 3
-        Me.MailButton.Text = "Generate Mail List"
-        Me.MailButton.UseVisualStyleBackColor = True
         '
         'CustRep
         '
@@ -176,4 +193,5 @@ Partial Class CustRep
     Friend WithEvents ApproveOrderButton As Button
     Friend WithEvents DeleteOrderButton As Button
     Friend WithEvents MailButton As Button
+    Friend WithEvents GenSimMovListButton As Button
 End Class
