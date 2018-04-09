@@ -4,51 +4,50 @@ Public Class User
     Private myConn As SqlConnection = New SqlConnection("Initial Catalog=CMPT291_Project;" & "Data Source=localhost;Integrated Security=SSPI")
     Private myCmd As SqlCommand
     Private myReader As SqlDataReader
-    Private cartArray = New List(Of String)
+    Private cid = "1"
 
     Private Sub User_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DGVMovieResults.AllowUserToAddRows = False
         DGVMovieResults.AllowUserToDeleteRows = False
         DGVMovieResults.SelectionMode = DataGridViewSelectionMode.FullRowSelect
 
-        DGVCart.AllowUserToAddRows = False
-        DGVCart.AllowUserToDeleteRows = False
-        DGVCart.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-
         DGVHeldMovies.AllowUserToAddRows = False
         DGVHeldMovies.AllowUserToDeleteRows = False
         DGVHeldMovies.SelectionMode = DataGridViewSelectionMode.FullRowSelect
 
+        DGVQueue.AllowUserToAddRows = False
+        DGVQueue.AllowUserToDeleteRows = False
+        DGVQueue.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+
         DGVMovieResults_Init()
         DGVActorResults_Refresh()
         DGVHeldMovies_Refresh()
+        DGVQueue_Refresh()
 
     End Sub
 
-    Private Sub DGVCart_Refresh()
+    Private Sub DGVQueue_Refresh()
+        myCmd = myConn.CreateCommand
+        myCmd.CommandText = "SELECT Movie.MID, Movie.Title from Movie, Queues where Queues.MID = Movie.MID AND Queues.CID = " + cid.ToString
         myConn.Open()
-        Dim queries = New DataTable()
-        queries.Clear()
-        For Each mid As String In cartArray
-            myCmd = myConn.CreateCommand
-            myCmd.CommandText = "SELECT Title From Movie where MID = " + mid.ToString
-            myReader = myCmd.ExecuteReader()
-            queries.Load(myReader)
-        Next
-        DGVCart.AutoGenerateColumns = True
-        DGVCart.DataSource = queries
-        DGVCart.Refresh()
+
+        myReader = myCmd.ExecuteReader()
+
+        Dim dtQueue = New DataTable()
+        dtQueue.Clear()
+        dtQueue.Load(myReader)
+
+        DGVQueue.AutoGenerateColumns = True
+        DGVQueue.DataSource = dtQueue
+        DGVQueue.Refresh()
+
         myReader.Close()
         myConn.Close()
     End Sub
 
-    Private Sub DGVQueue_Refresh()
-
-    End Sub
-
     Private Sub DGVHeldMovies_Refresh()
         myCmd = myConn.CreateCommand
-        myCmd.CommandText = "SELECT MID FROM Orders WHERE ActualReturn = null AND CID = 1"
+        myCmd.CommandText = "SELECT Movie.MID, Movie.Title FROM Orders, Movie WHERE Movie.MID = Orders.MID AND Orders.ActualReturn IS NULL AND Orders.CID = " + cid.ToString
         myConn.Open()
 
         myReader = myCmd.ExecuteReader()
@@ -136,21 +135,33 @@ Public Class User
     End Sub
 
     Private Sub BtnAddMovie_Click(sender As Object, e As EventArgs) Handles BtnAddMovie.Click
+        myConn.Open()
+
         For Each row As DataGridViewRow In DGVMovieResults.SelectedRows
-            Dim mid = row.Cells(0).Value
-            If (Not cartArray.Contains(mid.ToString)) Then
-                cartArray.Add(mid.ToString)
-            End If
+            myCmd = myConn.CreateCommand
+            Dim mid As Integer
+            mid = row.Cells(0).Value
+            myCmd.CommandText = "INSERT INTO Queues Values(" + cid.ToString + "," + mid.ToString + ")"
+            myCmd.ExecuteNonQuery()
+
         Next
-        DGVCart_Refresh()
+        myConn.Close()
+        DGVQueue_Refresh()
     End Sub
 
     Private Sub BtnRemoveMovie_Click(sender As Object, e As EventArgs) Handles BtnRemoveMovie.Click
-        For Each row As DataGridViewRow In DGVCart.SelectedRows
-            Dim mid = row.Cells(0).Value
-            cartArray.Remove(mid.ToString)
+        myConn.Open()
+
+        For Each row As DataGridViewRow In DGVQueue.SelectedRows
+            myCmd = myConn.CreateCommand
+            Dim mid As Integer
+            mid = row.Cells(0).Value
+            myCmd.CommandText = "DELETE FROM Queues WHERE CID = " + cid.ToString + " AND MID = " + mid.ToString
+            myCmd.ExecuteNonQuery()
+
         Next
-        DGVCart_Refresh()
+        myConn.Close()
+        DGVQueue_Refresh()
     End Sub
 
     Private Sub BtnSearch_Click(sender As Object, e As EventArgs) Handles BtnSearch.Click
@@ -184,6 +195,64 @@ Public Class User
     End Sub
 
     Private Sub BtnQueue_Click(sender As Object, e As EventArgs) Handles BtnQueue.Click
+        Dim CurDate As Date = Date.Now.Date
+        Dim ExpDate As Date = expecteddate(CurDate)
+        Dim formats() As String = {"yyyy-MM-dd"}
+        Dim Cur As String
+        Dim Exp As String
 
+        Dim oid As Int16
+        myCmd = myConn.CreateCommand
+        myCmd.CommandText = "SELECT count(*)FROM Movie"
+        myConn.Open()
+
+        myReader = myCmd.ExecuteReader()
+
+        Do While myReader.Read()
+            oid = myReader.GetInt32(0)
+        Loop
+        oid = oid + 1
+
+        myReader.Close()
+
+
+        For Each fmt In formats
+            Cur = CurDate.ToString(fmt)
+            Exp = ExpDate.ToString(fmt)
+        Next
+
+        For Each row As DataGridViewRow In DGVQueue.SelectedRows
+
+            Dim mid As Integer
+            mid = row.Cells(0).Value
+            myCmd.CommandText = "INSERT INTO Orders VALUES (" + oid.ToString + ", '" + Cur + "', '" + Exp + "', null, " + mid.ToString + ", " + cid.ToString + ", null)"
+            myCmd.ExecuteNonQuery()
+        Next
+        myConn.Close()
+        DGVHeldMovies_Refresh()
+    End Sub
+
+    Private Function expecteddate(orderdate As Date) As Date
+        Return orderdate.AddDays(14)
+    End Function
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        myConn.Open()
+        Dim Cur As String
+        Dim formats() As String = {"yyyy-MM-dd"}
+        For Each fmt In formats
+            Cur = Date.Now.Date.ToString(fmt)
+        Next
+
+        For Each row As DataGridViewRow In DGVHeldMovies.SelectedRows
+            myCmd = myConn.CreateCommand
+            Dim mid As Integer
+            mid = row.Cells(0).Value
+            myCmd.CommandText = "UPDATE Orders SET ActualReturn = '" + Cur + "' WHERE MID = " + mid.ToString + " AND CID = " + cid.ToString
+            myCmd.ExecuteNonQuery()
+
+        Next
+        myConn.Close()
+        DGVHeldMovies_Refresh()
     End Sub
 End Class
